@@ -1686,7 +1686,7 @@ abstract class AdminListHelper extends AdminBaseHelper
 			$primary = $className::getEntity()->getPrimary();
 		}
 
-		if (count($primary) === 1 || !is_array($primary)) {
+		if (!is_array($primary) || count($primary) === 1) {
 			return array($this->pk() => $id);
 		}
 
